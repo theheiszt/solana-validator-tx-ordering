@@ -1,0 +1,36 @@
+{
+  "name": "solana-validator-tx-ordering",
+  "version": "1.0.0",
+  "description": "Empirical investigation and reproducible measurement pipeline for Solana Mainnet validator intra-block transaction ordering across client forks (Post-Alpenglow Epoch 1075).",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theheiszt/solana-validator-tx-ordering.git"
+  },
+  "homepage": "https://www.moltalpha.dev",
+  "scripts": {
+    "start": "node src/cli.mjs --dry-run",
+    "dry-run": "node src/cli.mjs --dry-run",
+    "live": "node src/cli.mjs --live --max-spend-sol 0.05",
+    "collect-mainnet": "node src/collect_mainnet_blocks.mjs",
+    "verify": "node src/verify_claims.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": [
+    "solana",
+    "validators",
+    "agave",
+    "firedancer",
+    "frankendancer",
+    "jito",
+    "transaction-ordering",
+    "scheduler",
+    "alpenglow",
+    "moltalpha"
+  ],
+  "author": "theheiszt",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

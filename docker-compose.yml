@@ -1,0 +1,17 @@
+services:
+  measurement-pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SOLANA_MAINNET_RPC=${SOLANA_MAINNET_RPC:-https://api.mainnet-beta.solana.com}
+      - SOLANA_PRIVATE_KEY=${SOLANA_PRIVATE_KEY:-}
+      - SOLANA_KEYPAIR_PATH=${SOLANA_KEYPAIR_PATH:-}
+    volumes:
+      - ./data:/app/data
+      # Optional read-only external keypair mount for --live mode (never tracked in git)
+      # - ${HOST_KEYPAIR_DIR:-./keys_volume}:/keys_volume:ro
+    command: >
+      sh -c "node --test test/*.test.mjs &&
+             node src/cli.mjs --dry-run &&
+             node src/verify_claims.mjs"
