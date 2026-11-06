@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/theheiszt/solana-validator-tx-ordering.git"
   },
-  "homepage": "https://www.moltalpha.dev",
+  "homepage": "https://github.com/theheiszt/solana-validator-tx-ordering",
   "scripts": {
     "start": "node src/cli.mjs --dry-run",
     "dry-run": "node src/cli.mjs --dry-run",
@@ -25,8 +25,7 @@
     "jito",
     "transaction-ordering",
     "scheduler",
-    "alpenglow",
-    "moltalpha"
+    "alpenglow"
   ],
   "author": "theheiszt",
   "license": "MIT",
